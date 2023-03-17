@@ -1,45 +1,25 @@
-import React from "react";
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  AboutUs,
-  Chef,
-  FindUs,
-  Footer,
-  Gallery,
-  Header,
-  Intro,
-  Laurels,
-  SpecialMenu,
-} from "./container";
-import { Navbar } from "./components";
-import Signup from "./components/SignupIn/Signup";
 import "./App.css";
-import CombineAll from "./components/CombineAll";
-import Explore from "./Explore";
-import Signin from "./components/signin/signin";
-import Fheader from "./Flayout/Header/Header";
-import UserUpdate from "./Flayout/UserUpdate";
-// const Routing = () => {
-//   return <Route path="/signup" element={<Signup />}></Route>;
-// };
+import Cards from "./components/cards";
+import Form from "./components/form";
+import Header from "./components/header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Getall from "./components/Getall";
 
-const App = () => {
+function App(props) {
   return (
-    <div className="main">
-    
+    <>
+      {/* <Header /> */}
+
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<CombineAll />} />
-
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/userupdate/:id" element={<UserUpdate/>}/>
+          {" "}
+          <Route path="/" element={<Cards />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/getall" element={<Getall />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
-};
+}
 
 export default App;
